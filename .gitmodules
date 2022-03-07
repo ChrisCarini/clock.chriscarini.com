@@ -1,0 +1,3 @@
+[submodule "deploy-hooks"]
+	path = deploy-hooks
+	url = https://github.com/markomarkovic/simple-php-git-deploy.git

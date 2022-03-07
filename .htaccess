@@ -1,0 +1,15 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Force site to redirect to HTTPS instead of HTTP
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Return 404 for certain files/directories
+RedirectMatch 404 /\.git
+RedirectMatch 404 \.gitignore
+RedirectMatch 404 \.gitmodules
+
+RedirectMatch 404 README\.md
+RedirectMatch 404 VERSION
