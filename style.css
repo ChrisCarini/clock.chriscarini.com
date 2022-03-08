@@ -17,10 +17,12 @@ body {
 }
 
 canvas {
+    /*Variable for ease of changing the border width.*/
+    --border-width: 20px;
     padding: 0;
     margin: 0;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    border: 1px solid #ffffff;
+    width: calc(100% - var(--border-width) * 2);
+    height: calc(100% - var(--border-width) * 2);
+    border: var(--border-width) solid #ffffff;
     background-color: #050505;
 }
