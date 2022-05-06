@@ -202,23 +202,23 @@ function angle_array(time1, dt) {
 
     // These are the interpolation values to use for each digit in t1/t2
     let trans1, trans2, trans3, trans4;
-    if (t1[0] != t2[0]) {
+    if (t1[0] !== t2[0]) {
         // clock rolls every 10 hours until the 24th hour (roll at 4)
         trans1 = 1 - (60 * (((t1[0] < 2) ? 10 : 4) - h1) * (60 - m1) - s1) / dt;
     } else {
         trans1 = 0;
     }
-    if (t1[1] != t2[1]) {
+    if (t1[1] !== t2[1]) {
         trans2 = 1 - (60 * (60 - m1) - s1) / dt;
     } else {
         trans2 = 0;
     }
-    if (t1[2] != t2[2]) {
+    if (t1[2] !== t2[2]) {
         trans3 = 1 - (60 * (10 - m1 % 10) - s1) / dt;
     } else {
         trans3 = 0;
     }
-    if (t1[3] != t2[3]) {
+    if (t1[3] !== t2[3]) {
         trans4 = 1 - (60 - s1) / dt;
     } else {
         trans4 = 0;
@@ -241,9 +241,9 @@ function angle_array(time1, dt) {
 
 function transition(v_lerp, digit1, digit2) {
     // Short circuit this function
-    if (v_lerp == 0) {
+    if (v_lerp === 0) {
         return digit1;
-    } else if (v_lerp == 1) {
+    } else if (v_lerp === 1) {
         return digit2;
     }
 
