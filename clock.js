@@ -91,7 +91,10 @@ async function draw_canvas() {
     }
     // If the seconds are less than 55, then sleep for a second; otherwise, update update update!!!!!
     if (now.getSeconds() < 60 - TRANSITION_TIME) {
-        await new Promise(r => setTimeout(r, 1000));
+        const waitTime = (60 - TRANSITION_TIME) - now.getSeconds();
+        await new Promise(r => setTimeout(() => {
+            window.requestAnimationFrame(draw_canvas);
+        }, waitTime * 1000));
     }
 
     // Update the favicon
