@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json"/>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <title>Clock - Chris Carini</title>
     <script src="clock.js"></script>
+    <script defer src="serviceworker-init.js"></script>
 </head>
 <body onload="start_canvas();">
 <canvas id="clock-canvas"></canvas>
